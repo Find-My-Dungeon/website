@@ -30,7 +30,7 @@ include_once 'includes/header.php';
         <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-purple-300 bg-purple-100 lg:col-span-2">
             <h2 class="text-2xl font-bold">S'inscrire</h2>
 
-            <form action="login.php" method="post">
+            <form action="signup.php" method="post">
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-1">
                         <label for="username_register">Nom d'utilisateur</label>
