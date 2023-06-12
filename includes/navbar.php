@@ -1,15 +1,15 @@
 <header class="h-16 flex flex-row items-center justify-between px-6 py-2 bg-red-800 text-white">
-    <div class="logo">
+    <a href="/" class="logo">
         <div class="flex h-10 w-10 bg-white text-black">
             <span class="m-auto font-bold">FMD</span>
         </div>
-    </div>
+    </a>
 
     <?php if ($page_title != "Login") { ?>
         <div x-data="{ tab: '' }" class="flex flex-row gap-4 md:gap-12 items-center">
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
-                <div x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
+                <div x-cloak x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
                     <a href="#">Personnages</a>
                     <a href="#">Aventure</a>
                 </div>
@@ -25,7 +25,7 @@
                     <circle cx="12" cy="12" r="10" />
                 </svg>
 
-                <div x-show="tab == 'user'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
+                <div x-cloak x-show="tab == 'user'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
                     <a href="#">Mon profil</a>
                     <a href="#">Déconnexion</a>
                 </div>
@@ -37,7 +37,7 @@
                     <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
                 </svg>
 
-                <div x-show="tab == 'notifications'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
+                <div x-cloak x-show="tab == 'notifications'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
                     <span class="italic text-zinc-700 flex-shrink-0">No notifications.</span>
                 </div>
             </div>

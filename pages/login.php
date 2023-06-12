@@ -2,10 +2,10 @@
 
 $page_title = "Login";
 
-include_once 'includes/header.php';
+include_once '../includes/header.php';
 ?>
 <body>
-    <?php include_once 'includes/navbar.php'; ?>
+    <?php include_once '../includes/navbar.php'; ?>
 
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 lg:gap-8 py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
         <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-blue-300 bg-blue-100 mb-auto md:col-span-2">
@@ -51,6 +51,6 @@ include_once 'includes/header.php';
         </div>
     </div>
 
-    <?php include_once 'includes/footer.php'; ?>
+    <?php include_once '../includes/footer.php'; ?>
 </body>
 </html>
