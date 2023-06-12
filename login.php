@@ -7,8 +7,8 @@ include_once 'includes/header.php';
 <body>
     <?php include_once 'includes/navbar.php'; ?>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
-        <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-blue-300 bg-blue-100 mb-auto">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 lg:gap-8 py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
+        <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-blue-300 bg-blue-100 mb-auto md:col-span-2">
             <h2 class="text-2xl font-bold">Se connecter</h2>
 
             <form action="login.php" method="post">
@@ -27,7 +27,7 @@ include_once 'includes/header.php';
             </form>
         </div>
 
-        <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-purple-300 bg-purple-100 lg:col-span-2">
+        <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-purple-300 bg-purple-100 md:col-span-3">
             <h2 class="text-2xl font-bold">S'inscrire</h2>
 
             <form action="signup.php" method="post">
