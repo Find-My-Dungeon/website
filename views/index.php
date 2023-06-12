@@ -3,7 +3,7 @@ $page_title = "Accueil";
 include_once "../includes/header.php";
 ?>
 <body>
-<? include_once "../includes/navbar.php"; ?>
+<?php include_once "../includes/navbar.php"; ?>
 <main class="flex flex-col py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
     <div class="home-welcome mb-8">
         <h1 class="text-2xl font-bold">Bienvenue sur FMD</h1>

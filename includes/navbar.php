@@ -9,9 +9,9 @@
         <div x-data="{ tab: '' }" class="flex flex-row gap-4 md:gap-12 items-center">
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
-                <div x-cloak x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
-                    <a href="#">Personnages</a>
-                    <a href="#">Aventure</a>
+                <div x-cloak x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col px-6 py-2 bg-zinc-100 text-black border-2 border-zinc-300">
+                    <a href="#" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Personnages</a>
+                    <a href="#" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Aventure</a>
                 </div>
             </div>
             <h2 class="menu-link"><a href="#">Rechercher</a></h2>
@@ -25,9 +25,9 @@
                     <circle cx="12" cy="12" r="10" />
                 </svg>
 
-                <div x-cloak x-show="tab == 'user'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
-                    <a href="#">Mon profil</a>
-                    <a href="#">Déconnexion</a>
+                <div x-cloak x-show="tab == 'user'" class="absolute top-12 right-0 flex flex-col px-6 py-2 bg-zinc-100 text-black border-2 border-zinc-300">
+                    <a href="#" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Mon profil</a>
+                    <a href="#" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Déconnexion</a>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
                     <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
                 </svg>
 
-                <div x-cloak x-show="tab == 'notifications'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-gray-100 text-black">
+                <div x-cloak x-show="tab == 'notifications'" class="absolute top-12 right-0 flex flex-col gap-2 px-6 py-4 bg-zinc-100 text-black w-56 border-2 border-zinc-300">
                     <span class="italic text-zinc-700 flex-shrink-0">No notifications.</span>
                 </div>
             </div>
