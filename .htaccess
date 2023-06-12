@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteRule ^(.*/)?\.git+ - [R=404,L]
 
-# Serve ONLY the pages folder as top level
-RewriteCond %{REQUEST_URI} !^/pages/
-RewriteRule ^(.*)$ /pages/$1 [L,QSA]
+# Serve ONLY the views folder as top level
+RewriteCond %{REQUEST_URI} !^/views/
+RewriteRule ^(.*)$ /views/$1 [L,QSA]
