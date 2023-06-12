@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once '../utils/bdd.php';
 
         // Redirect to login
-        header('Location: /login.php');
+        if (init_bdd()) {
+            header('Location: /login.php');
+        }
     }
 }
 
