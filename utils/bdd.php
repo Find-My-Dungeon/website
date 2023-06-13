@@ -4,7 +4,7 @@ require_once __DIR__ . '/../utils/mysql.php';
 
 function init_bdd() {
   $sql='
-    CREATE TABLE `user` (
+    CREATE TABLE IF NOT EXISTS `user` (
       `id_user` int NOT NULL AUTO_INCREMENT,
       `name_user` varchar(45) NOT NULL,
       `first_name_user` varchar(45) NOT NULL,
@@ -20,7 +20,7 @@ function init_bdd() {
       UNIQUE KEY `pseudo_UNIQUE` (`pseudo`)
     );
     
-    CREATE TABLE `alert` (
+    CREATE TABLE IF NOT EXISTS `alert` (
       `id_alert` int NOT NULL AUTO_INCREMENT,
       `type_alert` varchar(45) NOT NULL,
       `message` text NOT NULL,
@@ -31,7 +31,7 @@ function init_bdd() {
       CONSTRAINT `id_user_alert` FOREIGN KEY (`id_user_alert`) REFERENCES `user` (`id_user`)
     );
 
-    CREATE TABLE `character` (
+    CREATE TABLE IF NOT EXISTS `character` (
       `id_character` int NOT NULL AUTO_INCREMENT,
       `name_character` varchar(45) NOT NULL,
       `classe` varchar(45) NOT NULL,
@@ -45,7 +45,7 @@ function init_bdd() {
       CONSTRAINT `id_user_character` FOREIGN KEY (`id_user_character`) REFERENCES `user` (`id_user`)
     );
     
-    CREATE TABLE `story` (
+    CREATE TABLE IF NOT EXISTS `story` (
       `id_story` int NOT NULL AUTO_INCREMENT,
       `title` varchar(45) NOT NULL,
       `level_story` int NOT NULL,
@@ -58,7 +58,7 @@ function init_bdd() {
       CONSTRAINT `id_user_story` FOREIGN KEY (`id_user_story`) REFERENCES `user` (`id_user`)
     );
 
-    CREATE TABLE `participation` (
+    CREATE TABLE IF NOT EXISTS `participation` (
       `id_participation` int NOT NULL AUTO_INCREMENT,
       `id_user_participation` int NOT NULL,
       `id_character_participation` int DEFAULT NULL,
