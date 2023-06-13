@@ -6,7 +6,7 @@ include_once '../includes/header.php';
     <?php include_once '../includes/navbar.php'; ?>
 
     <main class="flex flex-col py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
-        <form class="flex flex-col gap-4 w-full mx-auto" action="newCharacter.php" method="POST">
+        <form class="flex flex-col gap-4 w-full mx-auto" action="newCharacter" method="POST">
             <h1 class="text-2xl font-bold">Personnage de <span class="text-purple-500 font-extrabold">User</span></h1>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 w-full pb-2">

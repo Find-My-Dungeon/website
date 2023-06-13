@@ -11,7 +11,7 @@ include_once '../includes/header.php';
         <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-blue-300 bg-blue-100 mb-auto md:col-span-2">
             <h2 class="text-2xl font-bold">Se connecter</h2>
 
-            <form action="login.php" method="post">
+            <form action="login" method="post">
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-1">
                         <label for="email_login">Adresse email</label>
@@ -30,7 +30,7 @@ include_once '../includes/header.php';
         <div class="flex flex-col gap-4 px-6 py-3 rounded-2xl border-4 border-purple-300 bg-purple-100 md:col-span-3">
             <h2 class="text-2xl font-bold">S'inscrire</h2>
 
-            <form action="signup.php" method="post">
+            <form action="signup" method="post">
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-1">
                         <label for="username_register">Nom d'utilisateur</label>

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirect to login
         if ($success) {
-            header('Location: /login.php');
+            header('Location: /login');
             exit;
         }
     }
@@ -26,7 +26,7 @@ include_once '../includes/header.php';
         <h1 class="text-3xl font-bold text-center mb-4">Installation</h1>
         <span>Veuillez entrer le mot de passe d'administration pour débuter l'installation ou la mise à jour de la base de données.</span>
 
-        <form class="flex flex-col w-full" action="install.php" method="post">
+        <form class="flex flex-col w-full" action="install" method="post">
             <input type="password" class="border-2 border-zinc-300 rounded-md px-4 py-2 mt-4" name="password" placeholder="Mot de passe d'administration" />
             <input type="submit" class="border-2 border-red-500 rounded-md px-4 py-2 mt-4 bg-red-500 hover:bg-red-600 text-white" value="Valider" />
         </form>
