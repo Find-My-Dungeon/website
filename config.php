@@ -1,6 +1,6 @@
 <?php
 
-require_once 'utils/Dotenv.php';
+require_once __DIR__ . '/utils/Dotenv.php';
 
 $dotenv = new DotEnv(__DIR__ . '/.env');
 $dotenv->load();
