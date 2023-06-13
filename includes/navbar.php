@@ -1,4 +1,4 @@
-<header class="sticky top-0 left-0 right-0 h-16 flex flex-row items-center justify-between px-6 py-2 bg-red-800 text-white">
+<header class="sticky top-0 left-0 right-0 h-16 flex flex-row items-center justify-between px-6 py-2 bg-red-800 text-white z-20">
     <a href="/" class="logo">
         <div class="flex h-10 w-10 bg-white text-black">
             <span class="m-auto font-bold">FMD</span>
@@ -6,7 +6,7 @@
     </a>
 
     <?php if ($page_title != "Login") { ?>
-        <div x-data="{ tab: '' }" class="hidden md:block flex flex-row gap-4 md:gap-12 items-center">
+        <div x-data="{ tab: '' }" class="hidden md:flex flex-row gap-4 md:gap-12 items-center">
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
                 <div x-cloak x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col px-6 py-2 bg-zinc-100 text-black border-2 border-zinc-300">
@@ -17,7 +17,7 @@
             <h2 class="menu-link"><a href="#">Rechercher</a></h2>
         </div>
 
-        <div x-data="{ tab: '' }" class="hidden md:block flex flex-row gap-2">
+        <div x-data="{ tab: '' }" class="hidden md:flex flex-row gap-2">
             <div @mouseover="tab = 'user'" @mouseout="tab = ''" class="relative py-3 px-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle-2">
                     <path d="M18 20a6 6 0 0 0-12 0" />
