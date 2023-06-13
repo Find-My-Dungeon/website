@@ -5,7 +5,7 @@
         </div>
     </a>
 
-    <?php if ($page_title != "Login") { ?>
+    <?php if (isset($_SESSION)) { ?>
         <div x-data="{ tab: '' }" class="hidden md:flex flex-row gap-4 md:gap-12 items-center">
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
@@ -88,6 +88,6 @@
                 </div>
         </button>
     <?php } else { ?>
-        <h2 class="hidden md:block text-xl font-bold mx-auto">FindMyDungeon</h2>
+        <h2 class="block text-xl font-bold mx-auto">FindMyDungeon</h2>
     <?php } ?>
 </header>
