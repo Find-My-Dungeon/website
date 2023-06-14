@@ -46,7 +46,7 @@ include_once '../includes/header.php';
                     
                     <!-- Social networks -->
                     <div class="flex flex-col gap-2 pt-2">
-                        <h2 class="text-xl font-semibold">Réseaux sociaux <span class="text-red-500">*</span></h2>
+                        <h2 class="text-xl font-semibold">Réseaux sociaux</h2>
 
                         <div class="flex flew-row items-center gap-3">
                             <svg
