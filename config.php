@@ -10,5 +10,5 @@ $mysql_config = [
     'port' => $_ENV['MYSQL_PORT'] ?? 3306,
     'user' => $_ENV['MYSQL_USER'],
     'password' => $_ENV['MYSQL_PASSWORD'],
-    'database' => $_ENV['MYSQL_DATABASE'] ?? 'fmd',
+    'database' => $_ENV['MYSQL_DB'] ?? 'fmd',
 ];
