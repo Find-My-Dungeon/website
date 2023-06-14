@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/../utils/mysql.php'; ?>
+
 <!DOCTYPE html>
 <head lang="fr">
     <meta charset="utf-8" />

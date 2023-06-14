@@ -1,43 +1,14 @@
 <?php
 
 function get_adventurers() {
-    $data_test = [
-        "name" => "PHiBi",
-        "class" => "yipeee",
-        "species" => "TBH",
-        "level" => "69",
-        "avatar" => "https://pbs.twimg.com/profile_images/1662799693653442560/xvyy0ufj_400x400.jpg",
-        "bio" => "Je suis un testeur de FMD",
-    ];
+    require_once __DIR__ . '/../utils/mysql.php';
 
-    function read_adveturers(){
-            require_once __DIR__ . '/../utils/mysql.php/';
+    $sql = "SELECT * FROM character";    
+    $result = execute_sql($sql);
 
-            $sql = "SELECT c.avatar, c.name_character, c.classe, c.race, c.level, c.resume
-	                FROM character AS c
-	                WHERE id_character = id_character";
-            $parameters = array(
-                'c.name' => $name,
-                'c.avatar' => $avatar,
-                'c.classe' => $class,
-                'c.race' => $species,
-                'c.resume' => $bio,
-                'c.level' => $level,
-            );
-            
-        execute_sql($sql, $parameters);
+    echo 'Résultat :' . $result;
 
-    }
-
-    $out_array = [];
-    // Fill array with 3 times the same adventurer
-    // with an id property starting at 0
-    for ($i = 0; $i < 5; $i++) {
-        $data_test["id"] = $i;
-        array_push($out_array, $data_test);
-    }
-
-    return $out_array;
+    return $result;
 }
 
 function adventurer_card($adventurer) {
