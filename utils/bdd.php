@@ -49,9 +49,11 @@ function init_bdd() {
     CREATE TABLE IF NOT EXISTS `story` (
       `id_story` int NOT NULL AUTO_INCREMENT,
       `title` varchar(45) NOT NULL,
+      `genre` varchar(45) NOT NULL,
       `level_story` int NOT NULL,
-      `resume_story` varchar(500) NOT NULL,
+      `resume_story` varchar(500) NOT NULL,      
       `number_character` int NOT NULL,
+      `max_number_character` int NOT NULL,
       `id_user_story` int DEFAULT NULL,
       PRIMARY KEY (`id_story`),
       UNIQUE KEY `id_story_UNIQUE` (`id_story`),
