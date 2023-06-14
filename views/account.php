@@ -20,7 +20,7 @@ include_once '../includes/header.php';
                     </svg>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 w-full pb-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 w-full">
                     <div class="flex flex-col gap-4 pt-2">
                         <div class="flex flex-col">
                             <b>Pseudo</b>
