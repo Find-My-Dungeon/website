@@ -8,10 +8,10 @@ function init_bdd() {
       `id_user` int NOT NULL AUTO_INCREMENT,
       `name_user` varchar(45) NOT NULL,
       `first_name_user` varchar(45) NOT NULL,
-      `pseudo` varchar(45) NOT NULL,
+      `pseudo` varchar(45) NOT NULL,      
       `email` varchar(45) NOT NULL,
-      `password` varchar(45) NOT NULL,
-      `salt` varchar(45) DEFAULT NULL,
+      `password` text NOT NULL,
+      `salt` text DEFAULT NULL,
       `localisation` varchar(45) DEFAULT NULL,
       `is_admin` tinyint DEFAULT NULL,
       PRIMARY KEY (`id_user`),
@@ -33,6 +33,7 @@ function init_bdd() {
 
     CREATE TABLE IF NOT EXISTS `character` (
       `id_character` int NOT NULL AUTO_INCREMENT,
+      `avatar` text,
       `name_character` varchar(45) NOT NULL,
       `classe` varchar(45) NOT NULL,
       `race` varchar(45) NOT NULL,

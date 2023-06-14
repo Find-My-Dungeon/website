@@ -15,10 +15,10 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 
-function execute_sql($sql) {
+function execute_sql($sql, $parameters) {
   global $pdo;
   $stmt = $pdo->prepare($sql);
-  $stmt->execute();
+  $stmt->execute($parameters);
   return $stmt->fetchAll();
 }
 

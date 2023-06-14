@@ -10,6 +10,25 @@ function get_adventurers() {
         "bio" => "Je suis un testeur de FMD",
     ];
 
+    function read_adveturers(){
+            require_once __DIR__ . '/../utils/mysql.php/';
+
+            $sql = "SELECT c.avatar, c.name_character, c.classe, c.race, c.level, c.resume
+	                FROM character AS c
+	                WHERE id_character = id_character";
+            $parameters = array(
+                'c.name' => $name,
+                'c.avatar' => $avatar,
+                'c.classe' => $class,
+                'c.race' => $species,
+                'c.resume' => $bio,
+                'c.level' => $level,
+            );
+            
+        execute_sql($sql, $parameters);
+
+    }
+
     $out_array = [];
     // Fill array with 3 times the same adventurer
     // with an id property starting at 0
