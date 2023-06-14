@@ -21,6 +21,10 @@ require_once "../data/news.php";
                 <?php
                     $adventurers = get_adventurers();
 
+                    if (count($adventurers) == 0) {
+                        echo "<p>Aucun.e aventurier.ière n'a été trouvé.e</p>";
+                    }
+
                     foreach ($adventurers as $adventurer) { adventurer_card($adventurer); }
                 ?>
             </div>
@@ -31,6 +35,10 @@ require_once "../data/news.php";
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-cols-min">
                 <?php
                     $adventures = get_adventures();
+
+                    if (count($adventures) == 0) {
+                        echo "<p>Aucune aventure n'a été trouvée</p>";
+                    }
 
                     foreach ($adventures as $adventure) { adventure_card($adventure); }
                 ?>
