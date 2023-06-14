@@ -1,4 +1,4 @@
-<header class="sticky top-0 left-0 right-0 h-16 flex flex-row items-center justify-between px-6 py-2 bg-red-800 text-white z-20">
+<header class="sticky top-0 left-0 right-0 h-16 flex flex-row items-center justify-between px-6 py-2 bg-red-800 text-white z-20 shadow-lg">
     <a href="/" class="logo">
         <div class="flex h-10 w-10 bg-white text-black">
             <span class="m-auto font-bold">FMD</span>
