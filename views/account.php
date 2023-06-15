@@ -3,13 +3,21 @@
 $page_title = "Profil";
 
 include_once '../includes/header.php';
+
+require_once __DIR__ . '/../data/accounts.php';
+
+$account = get_user($_GET["id"]);
+
+// $full_name_user will contain both $account["first_name_user"] and $account["name_user"] if they are not empty
+$full_name_user = trim($account["first_name_user"] . " " . $account["name_user"]);
+
 ?>
 <body>
     <?php include_once '../includes/navbar.php'; ?>
 
     <main class="flex flex-col py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-lg mx-auto">
         <div class="flex flex-col gap-4 w-full mx-auto">
-            <h1 class="text-2xl font-bold">Profil de <span class="text-purple-500 font-extrabold">User</span></h1>
+            <h1 class="text-2xl font-bold">Profil de <span class="text-purple-500 font-extrabold"><?= $full_name_user ?></span></h1>
             
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 w-full">
                 <div class="h-56 w-56 aspect-square rounded-xl bg-zinc-300 flex items-center justify-center flex-shrink-0">
@@ -24,21 +32,21 @@ include_once '../includes/header.php';
                     <div class="flex flex-col gap-4 pt-2">
                         <div class="flex flex-col">
                             <b>Pseudo</b>
-                            <span>PHiBi</span>
+                            <span><?= $account["pseudo"] ?></span>
                         </div>
                         <div class="flex flex-col">
                             <b>Adresse email</b>
-                            <span>phibi@mail.com</span>
+                            <span><?= $account["email"] ?></span>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-3">
                         <div class="flex flex-col">
                             <b>Région</b>
-                            <span>Europe</span>
+                            <span><?= $account["localisation"] ?></span>
                         </div>
 
-                        <div class="flex flex-col">
+                        <div class="flex flex-col hidden">
                             <b>Présentation</b>
                             <p class="whitespace-pre-wrap">Bonjour ! Je suis stupide.</p>
                         </div>
@@ -48,7 +56,9 @@ include_once '../includes/header.php';
                     <div class="flex flex-col gap-2 pt-2">
                         <h2 class="text-xl font-semibold">Réseaux sociaux</h2>
 
-                        <div class="flex flew-row items-center gap-3">
+                        <i>Pas de réseaux sociaux renseignés.</i>
+
+                        <div class="flex flew-row items-center gap-3 hidden">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="black"
@@ -59,7 +69,7 @@ include_once '../includes/header.php';
                             <span class="text-purple-500 font-bold">@PHiBi#2540</span>
                         </div>
 
-                        <a href="https://instagram.com/PHiBi" class="flex flew-row items-center gap-3 hover:underline">
+                        <a href="https://instagram.com/PHiBi" class="flex flew-row items-center gap-3 hover:underline hidden">
                             <svg
                                 viewBox="0 0 1024 1024"
                                 fill="black"
@@ -70,7 +80,7 @@ include_once '../includes/header.php';
                             <span class="text-purple-500 font-bold">@PHiBi</span>
                         </a>
 
-                        <a href="https://twitter.com/PHiBi" class="flex flew-row items-center gap-3 hover:underline">
+                        <a href="https://twitter.com/PHiBi" class="flex flew-row items-center gap-3 hover:underline hidden">
                             <svg
                                 viewBox="0 0 1024 1024"
                                 fill="black"

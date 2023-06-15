@@ -51,10 +51,10 @@ $adventurer = get_adventurer($_GET["id"]);
         </div>
 
         <div class="flex flex-row items-center justify-center sticky bottom-6 left-0 right-0">
-            <button class="flex flex-row gap-3 border-2 border-purple-500 rounded-md px-4 py-2 mt-4 bg-purple-500 hover:bg-purple-600 text-white">
+            <a href="account?id=<?= $adventurer["id_user_adventurer"] ?>" class="flex flex-row gap-3 border-2 border-purple-500 rounded-md px-4 py-2 mt-4 bg-purple-500 hover:bg-purple-600 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-plus"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="M19 16v6"/><path d="M16 19h6"/></svg>
-                <span>Contacter User</span>
-            </button>
+                <span>Voir le profil de <?= $adventurer["name_user"] ?></span>
+            </a>
         </div>
     </main>
 
