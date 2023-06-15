@@ -8,9 +8,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     exit;
 }
 
-var_dump($_POST);
-
-//connexion
+// connexion
 if(isset($_POST['email_login']) && isset($_POST['password_login'])) {
     $email = $_POST['email_login'];
     $password = $_POST['password_login'];
@@ -32,7 +30,7 @@ if(isset($_POST['email_login']) && isset($_POST['password_login'])) {
     }
 }
 
-//inscription
+// inscription
 if(isset($_POST['name_user_register']) && isset($_POST['email_register']) && isset($_POST['password_register'])) {
     $name_user = $_POST['name_user_register'];
     $email = $_POST['email_register'];
