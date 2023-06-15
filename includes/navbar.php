@@ -10,7 +10,7 @@
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
                 <div x-cloak x-show="tab == 'sheets'" class="absolute top-10 left-0 flex flex-col px-6 py-2 bg-zinc-100 text-black border-2 border-zinc-300">
-                    <a href="/character" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Personnages</a>
+                    <a href="myCharacters" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Personnages</a>
                     <a href="#" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Aventure</a>
                 </div>
             </div>
@@ -26,8 +26,8 @@
                 </svg>
 
                 <div x-cloak x-show="tab == 'user'" class="absolute top-12 right-0 flex flex-col px-6 py-2 bg-zinc-100 text-black border-2 border-zinc-300">
-                    <a href="/account" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Mon profil</a>
-                    <a href="/logout" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Déconnexion</a>
+                    <a href="account" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Mon profil</a>
+                    <a href="logout" class="-ml-6 -mr-6 py-2 px-6 hover:bg-zinc-200">Déconnexion</a>
                 </div>
             </div>
 
@@ -80,10 +80,10 @@
                     </div>
 
                     <div class="flex flex-col gap-6 items-center justify-center h-full">
-                        <h2 class="text-xl font-semibold"><a href="#">Mes fiches</a></h2>
+                        <h2 class="text-xl font-semibold"><a href="myCharacters">Mes fiches</a></h2>
                         <h2 class="text-xl font-semibold"><a href="#">Rechercher</a></h2>
-                        <h2 class="text-xl font-semibold"><a href="#">Mon profil</a></h2>
-                        <h2 class="absolute bottom-8 text-xl font-semibold"><a href="#">Déconnexion</a></h2>
+                        <h2 class="text-xl font-semibold"><a href="account">Mon profil</a></h2>
+                        <h2 class="absolute bottom-8 text-xl font-semibold"><a href="logout">Déconnexion</a></h2>
                     </div>
                 </div>
         </button>
@@ -91,7 +91,7 @@
         <h2 class="block text-xl font-bold mx-auto">FindMyDungeon</h2>
 
         <div class="h-10 w-10 bg-white/20 flex items-center justify-center rounded-full">
-            <a href="/login" class="text-xl font-semibold">
+            <a href="login" class="text-xl font-semibold">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
             </a>
         </div>
