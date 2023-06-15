@@ -1,2 +1,15 @@
 RewriteEngine On
 RewriteRule ^(.*/)?\.git+ - [R=404,L]
+
+# Remove .php from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Serve ONLY the views folder as top level
+RewriteCond %{REQUEST_URI} !^/views/
+RewriteRule ^(.*)$ /views/$1 [L,QSA]
+
+# Show errors
+php_flag display_startup_errors on
+php_flag display_errors on
