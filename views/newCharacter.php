@@ -1,8 +1,6 @@
 <?php
 $page_title = "Nouvelle fiche utilisateur";
-include_once '../includes/header.php';
-var_dump($_SESSION);
-die("toto");    
+include_once '../includes/header.php';   
 ?><body>
     <?php include_once '../includes/navbar.php'; ?>
 
@@ -59,23 +57,41 @@ die("toto");
         )
     {
         echo 'Des informations obligatoires sont manquantes.';
+    }else{
+
+
+        $name_adventurer = htmlentities(trim($_POST['name_adventurer']));
+        $classe = htmlentities(trim($_POST['classe']));
+        $race = htmlentities(trim($_POST['race']));
+        $avatar = htmlentities(trim($_POST['avatar']));
+        $level = htmlentities(trim('level'));
+        $resume_adventurer = htmlentities(trim($_POST['resume_adventurer']));
+    
+        require_once __DIR__ . '/../utils/mysql.php';
+    
+        $sql = "INSERT INTO `adventurer` 
+            (`name_adventurer`, `classe`, `race`, `level`, `avatar`,  `resume_adventurer`, `id_user_adventurer`) 
+            VALUES (:name_adventurer, :classe, :race, :level, :avatar, :resume_adventurer, :id_user_adventurer)";   
+        
+        $params = array(
+            ':name_adventurer' => $name_adventurer, 
+            ':classe' => $classe,
+            ':race' => $race,
+            ':avatar' => $avatar, 
+            ':level' => $level,
+            ':resume_adventurer' => $resume_adventurer,
+            ':id_user_adventurer' => $_SESSION["id"],
+            
+        );
+        
+        $result = execute_sql($sql,$params);
+        
+        var_dump($result);
+        die();
+
+        header("location: /character");
+    
     }
-
-    $name_adventurer = htmlentities(trim($_POST['name_adventurer']));
-    $classe = $_POST['classe'];
-    $race = $_POST['race'];
-    $avatar = $_POST['avatar'];
-    $resume_adventurer = $_POST['resume_adventurer'];
-
-
-    require_once __DIR__ . '/../utils/mysql.php';
-
-    $sql = "INSERT INTO `adventurer` 
-        (`name_adventurer`, `classe`, `race`, `level`, `avatar`,  `resume_adventurer`, `id_user_adventurer`) 
-        VALUES (':name_adventurer', ':classe', ':race', ':level', ':avatar', ':resume_adventurer', ':id_user_adventurer')";   
-    $result = execute_sql($sql);
-
-    return $result;
     
 ?>
 
