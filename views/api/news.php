@@ -8,6 +8,9 @@ GET /api/adventures
 
 */
 
+if (!isset($_SESSION)){session_start();}
+require_once __DIR__ . '/../../utils/mysql.php';
+
 // Include the model
 require_once "../../data/news.php";
 

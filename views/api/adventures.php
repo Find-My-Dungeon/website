@@ -8,6 +8,9 @@ PUT /api/adventures/{id}
 DELETE /api/adventures/{id}
 */
 
+if (!isset($_SESSION)){session_start();}
+require_once __DIR__ . '/../../utils/mysql.php';
+
 // Include the model
 require_once "../../data/adventures.php";
 
