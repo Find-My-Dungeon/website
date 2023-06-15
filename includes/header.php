@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/../utils/mysql.php'; ?>
+<?php
+session_start();
+require_once __DIR__ . '/../utils/mysql.php';
+?>
 
 <!DOCTYPE html>
 <head lang="fr">
