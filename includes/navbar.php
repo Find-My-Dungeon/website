@@ -80,7 +80,8 @@
                     </div>
 
                     <div class="flex flex-col gap-16 items-center justify-center h-full">
-                        <h2 class="text-xl font-semibold"><a href="myCharacters">Mes fiches</a></h2>
+                        <h2 class="text-xl font-semibold"><a href="myCharacters">Mes personnages</a></h2>
+                        <h2 class="text-xl font-semibold"><a href="#">Mon aventure</a></h2>
                         <h2 class="text-xl font-semibold"><a href="#">Rechercher</a></h2>
                         <h2 class="text-xl font-semibold"><a href="account">Mon profil</a></h2>
                         <h2 class="absolute bottom-8 text-xl font-semibold"><a href="logout">Déconnexion</a></h2>
