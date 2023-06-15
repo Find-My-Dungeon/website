@@ -3,7 +3,7 @@
 function get_adventures() {
     require_once __DIR__ . '/../utils/mysql.php';
 
-    $sql = "SELECT * FROM fmd.story";    
+    $sql = "SELECT * FROM story";    
     $result = execute_sql($sql);
 
     return $result;
