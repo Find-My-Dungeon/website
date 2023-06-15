@@ -19,6 +19,16 @@ function get_adventurer($id) {
     return $result[0];
 }
 
+function get_user_adventurers($id) {
+    require_once __DIR__ . '/../utils/mysql.php';
+
+    $sql = "SELECT * FROM adventurer WHERE id_user_adventurer = :id";
+    $parameters = array(':id' => $id);
+    $result = execute_sql($sql, $parameters);
+
+    return $result;
+}
+
 function adventurer_card($adventurer) {
     ?>
     <a href="character?id=<?= $adventurer["id_adventurer"] ?>" class="px-4 py-3 rounded-xl border-2 border-blue-300 bg-blue-100 transition hover:border-blue-400 hover:bg-blue-200 hover:shadow-lg w-full md:basis-1/2 lg:basis-1/3">

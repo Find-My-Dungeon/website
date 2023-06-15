@@ -5,6 +5,7 @@ $page_title = "Profil";
 include_once '../includes/header.php';
 
 require_once __DIR__ . '/../data/accounts.php';
+require_once __DIR__ . '/../data/adventurers.php';
 
 $account = get_user($_GET["id"] ?? $_SESSION["id"]);
 
@@ -101,6 +102,21 @@ $full_name_user = trim($account["first_name_user"] . " " . $account["name_user"]
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-3 mt-4">
+            <h3 class="text-lg font-semibold">Aventuriers.ères</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-cols-min">
+                <?php
+                    $adventurers = get_user_adventurers($account['id_user']);
+
+                    if (count($adventurers) == 0) {
+                        echo "<p>Aucun.e aventurier.ière n'a été trouvé.e</p>";
+                    }
+
+                    foreach ($adventurers as $adventurer) { adventurer_card($adventurer); }
+                ?>
             </div>
         </div>
     </main>
