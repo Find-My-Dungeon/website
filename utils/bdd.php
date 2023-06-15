@@ -11,7 +11,6 @@ function init_bdd() {
       `pseudo` varchar(45) NOT NULL,      
       `email` varchar(45) NOT NULL,
       `password` text NOT NULL,
-      `salt` text DEFAULT NULL,
       `localisation` varchar(45) DEFAULT NULL,
       `is_admin` tinyint DEFAULT NULL,
       PRIMARY KEY (`id_user`),
