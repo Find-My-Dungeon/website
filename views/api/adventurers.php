@@ -3,6 +3,7 @@
 Available routes:
 GET /api/adventurers
 GET /api/adventurers?id={id}
+GET /api/adventurers?userId={userId}
 POST /api/adventurers
 PUT /api/adventurers?id={id}
 DELETE /api/adventurers?id={id}
@@ -26,6 +27,30 @@ if ($method === "GET") {
     if ($id) {
         // If there is an id, get the adventurer
         $adventurer = get_adventurer($id);
+
+        // If there is no adventurer, return a 404 error
+        if (!$adventurer) {
+            http_response_code(404);
+
+            echo json_encode([
+                "error" => "adventurerNotFound",
+                "message" => "Aucun aventurier trouvé"
+            ]);
+            
+            exit;
+        }
+
+        // If there is an adventurer, return it
+        echo json_encode($adventurer);
+        exit;
+    }
+
+    // Get the userId from the URL
+    $userId = $_GET["userId"] ?? null;
+
+    if ($userId) {
+        // If there is an userId, get the adventurer
+        $adventurer = get_user_adventurers($userId);
 
         // If there is no adventurer, return a 404 error
         if (!$adventurer) {
