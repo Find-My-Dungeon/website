@@ -39,7 +39,6 @@ if(isset($_POST['name_user_register']) && isset($_POST['email_register']) && iss
     $sql = "SELECT * FROM user WHERE email = :email";
     $parameters = array(':email' => $email);
     $result = execute_sql($sql, $parameters);
-    var_dump($result);
 
     if(count($result) == 0) {
         $hashed_password = sha1($password . $email);
