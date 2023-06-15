@@ -79,7 +79,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                     </div>
 
-                    <div class="flex flex-col gap-6 items-center justify-center h-full">
+                    <div class="flex flex-col gap-16 items-center justify-center h-full">
                         <h2 class="text-xl font-semibold"><a href="myCharacters">Mes fiches</a></h2>
                         <h2 class="text-xl font-semibold"><a href="#">Rechercher</a></h2>
                         <h2 class="text-xl font-semibold"><a href="account">Mon profil</a></h2>
