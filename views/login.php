@@ -21,7 +21,7 @@ if(isset($_POST['email_login']) && isset($_POST['password_login'])) {
     if(count($result) > 0) {
         $user = $result[0];
         $_SESSION["loggedin"] = true;
-        $_SESSION["id"] = $user['id'];
+        $_SESSION["id"] = $user['id_user'];
         $_SESSION["name_user"] = $user['name_user'];
         $_SESSION["is_admin"] = $user['is_admin'];
         header("location: /");
