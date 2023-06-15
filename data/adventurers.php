@@ -11,7 +11,7 @@ function get_adventurers() {
 
 function adventurer_card($adventurer) {
     ?>
-    <div class="px-4 py-3 rounded-xl border-2 border-blue-300 bg-blue-100 w-full md:basis-1/2 lg:basis-1/3">
+    <a href="character?id=<?= $adventurer["id_adventurer"] ?>" class="px-4 py-3 rounded-xl border-2 border-blue-300 bg-blue-100 transition hover:border-blue-400 hover:bg-blue-200 hover:shadow-lg w-full md:basis-1/2 lg:basis-1/3">
         <div class="h-24 w-24 rounded-full overflow-hidden float-left mr-3">
             <img src="<?php echo $adventurer["avatar"]; ?>" alt="Avatar de <?php echo $adventurer["name_adventurer"]; ?>" />
         </div>
@@ -22,6 +22,6 @@ function adventurer_card($adventurer) {
             <p>Niveau <?php echo $adventurer["level"]; ?></p>
             <p><?php echo $adventurer["resume_adventurer"]; ?></p>
         </div>
-    </div>
+    </a>
     <?php
 }
