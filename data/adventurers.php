@@ -12,7 +12,7 @@ function get_adventurers() {
 function get_adventurer($id) {
     require_once __DIR__ . '/../utils/mysql.php';
 
-    $sql = "SELECT adventurer.*, user.name_user FROM adventurer JOIN user ON adventurer.id_user_adventurer = user.id_user WHERE id_adventurer = :id";
+    $sql = "SELECT adventurer.*, user.name_user, user.first_name_user FROM adventurer JOIN user ON adventurer.id_user_adventurer = user.id_user WHERE id_adventurer = :id";
     $parameters = array(':id' => $id);
     $result = execute_sql($sql, $parameters);
 

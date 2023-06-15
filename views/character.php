@@ -6,12 +6,14 @@ require_once __DIR__ . '/../data/adventurers.php';
 
 $adventurer = get_adventurer($_GET["id"]);
 
+$full_name_user = trim($adventurer["first_name_user"] . " " . $adventurer["name_user"]);
+
 ?>
 <body>
     <?php include_once '../includes/navbar.php'; ?>
 
     <main class="py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4">Personnage de <span class="text-purple-500 font-extrabold"><?= $adventurer["name_user"] ?></span></h1>
+        <h1 class="text-2xl font-bold mb-4">Personnage de <span class="text-purple-500 font-extrabold"><?= $full_name_user ?></span></h1>
 
         <div class="h-24 w-24 rounded-xl bg-zinc-300 flex items-center justify-center mx-auto float-left mr-6 mb-4 overflow-hidden">
             <?php
@@ -53,7 +55,7 @@ $adventurer = get_adventurer($_GET["id"]);
         <div class="flex flex-row items-center justify-center sticky bottom-6 left-0 right-0">
             <a href="account?id=<?= $adventurer["id_user_adventurer"] ?>" class="flex flex-row gap-3 border-2 border-purple-500 rounded-md px-4 py-2 mt-4 bg-purple-500 hover:bg-purple-600 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-plus"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="M19 16v6"/><path d="M16 19h6"/></svg>
-                <span>Voir le profil de <?= $adventurer["name_user"] ?></span>
+                <span>Voir le profil de <?= $full_name_user ?></span>
             </a>
         </div>
     </main>
