@@ -6,7 +6,7 @@ include_once '../includes/header.php';
 
 require_once __DIR__ . '/../data/accounts.php';
 
-$account = get_user($_GET["id"]);
+$account = get_user($_GET["id"] ?? $_SESSION["id"]);
 
 // $full_name_user will contain both $account["first_name_user"] and $account["name_user"] if they are not empty
 $full_name_user = trim($account["first_name_user"] . " " . $account["name_user"]);
