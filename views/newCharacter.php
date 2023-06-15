@@ -45,54 +45,50 @@ include_once '../includes/header.php';
 
 
 <?php 
-
-    
-
-    if (
-        !isset($_POST['name_adventurer'])
-        || !isset($_POST['classe'])
-        || !isset($_POST['race'])
-        || !isset($_POST['avatar'])
-        || !isset($_POST['resume_adventurer'])
-        )
-    {
-        echo 'Des informations obligatoires sont manquantes.';
-    }else{
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (
+            !isset($_POST['name_adventurer'])
+            || !isset($_POST['classe'])
+            || !isset($_POST['race'])
+            || !isset($_POST['avatar'])
+            || !isset($_POST['resume_adventurer'])
+        ) {
+            echo '<span class="mx-auto px-6">Des informations obligatoires sont manquantes.</span>';
+        } else {
 
 
-        $name_adventurer = htmlentities(trim($_POST['name_adventurer']));
-        $classe = htmlentities(trim($_POST['classe']));
-        $race = htmlentities(trim($_POST['race']));
-        $avatar = htmlentities(trim($_POST['avatar']));
-        $level = htmlentities(trim('level'));
-        $resume_adventurer = htmlentities(trim($_POST['resume_adventurer']));
-    
-        require_once __DIR__ . '/../utils/mysql.php';
-    
-        $sql = "INSERT INTO `adventurer` 
-            (`name_adventurer`, `classe`, `race`, `level`, `avatar`,  `resume_adventurer`, `id_user_adventurer`) 
-            VALUES (:name_adventurer, :classe, :race, :level, :avatar, :resume_adventurer, :id_user_adventurer)";   
+            $name_adventurer = htmlentities(trim($_POST['name_adventurer']));
+            $classe = htmlentities(trim($_POST['classe']));
+            $race = htmlentities(trim($_POST['race']));
+            $avatar = htmlentities(trim($_POST['avatar']));
+            $level = htmlentities(trim('level'));
+            $resume_adventurer = htmlentities(trim($_POST['resume_adventurer']));
         
-        $params = array(
-            ':name_adventurer' => $name_adventurer, 
-            ':classe' => $classe,
-            ':race' => $race,
-            ':avatar' => $avatar, 
-            ':level' => $level,
-            ':resume_adventurer' => $resume_adventurer,
-            ':id_user_adventurer' => $_SESSION["id"],
+            require_once __DIR__ . '/../utils/mysql.php';
+        
+            $sql = "INSERT INTO `adventurer` 
+                (`name_adventurer`, `classe`, `race`, `level`, `avatar`,  `resume_adventurer`, `id_user_adventurer`) 
+                VALUES (:name_adventurer, :classe, :race, :level, :avatar, :resume_adventurer, :id_user_adventurer)";   
             
-        );
-        
-        $result = execute_sql($sql,$params);
-        
-        var_dump($result);
-        die();
+            $params = array(
+                ':name_adventurer' => $name_adventurer, 
+                ':classe' => $classe,
+                ':race' => $race,
+                ':avatar' => $avatar, 
+                ':level' => $level,
+                ':resume_adventurer' => $resume_adventurer,
+                ':id_user_adventurer' => $_SESSION["id"],
+                
+            );
+            
+            $result = execute_sql($sql,$params);
+            
+            var_dump($result);
+            die();
 
-        header("location: /character");
-    
+            header("location: /character");   
+        }
     }
-    
 ?>
 
     <?php include_once '../includes/footer.php'; ?>
