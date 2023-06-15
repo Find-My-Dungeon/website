@@ -17,8 +17,17 @@ $full_name_user = trim($account["first_name_user"] . " " . $account["name_user"]
 
     <main class="flex flex-col py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-lg mx-auto">
         <div class="flex flex-col gap-4 w-full mx-auto">
-            <h1 class="text-2xl font-bold">Profil de <span class="text-purple-500 font-extrabold"><?= $full_name_user ?></span></h1>
-            
+            <div class="flex flex-row gap-4 justify-between">
+                <h1 class="text-2xl font-bold">Profil de <span class="text-purple-500 font-extrabold"><?= $full_name_user ?></span></h1>
+                
+                <?php if ($_SESSION["id"] == $account["id_user"]) { ?>
+                    <a href="myAccount" class="flex flex-row items-center gap-2 bg-purple-500 hover:bg-purple-600 focus:bg-purple-700 active:bg-purple-800 text-white font-medium py-1 px-2 rounded-lg" type="submit">
+                        <span>Modifier</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </a>
+                <?php } ?>
+            </div>
+
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 w-full">
                 <div class="h-56 w-56 aspect-square rounded-xl bg-zinc-300 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle-2">
