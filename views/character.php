@@ -1,40 +1,49 @@
 <?php
 $page_title = "Fiche personnage";
 include_once '../includes/header.php';
+
+require_once __DIR__ . '/../data/adventurers.php';
+
+$adventurer = get_adventurer($_GET["id"]);
+
 ?>
 <body>
     <?php include_once '../includes/navbar.php'; ?>
 
     <main class="py-4 md:py-6 lg:py-8 w-11/12 max-w-screen-xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4">Personnage de <span class="text-purple-500 font-extrabold">User</span></h1>
+        <h1 class="text-2xl font-bold mb-4">Personnage de <span class="text-purple-500 font-extrabold"><?= $adventurer["name_user"] ?></span></h1>
 
-        <div class="h-24 w-24 rounded-xl bg-zinc-300 flex items-center justify-center mx-auto float-left mr-6 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle-2">
-                <path d="M18 20a6 6 0 0 0-12 0" />
-                <circle cx="12" cy="10" r="4" />
-                <circle cx="12" cy="12" r="10" />
-            </svg>
+        <div class="h-24 w-24 rounded-xl bg-zinc-300 flex items-center justify-center mx-auto float-left mr-6 mb-4 overflow-hidden">
+            <?php
+            if (isset($adventurer["avatar"])) {
+                ?>
+                <img src="<?= $adventurer["avatar"] ?>" alt="Avatar de <?= $adventurer["name_adventurer"] ?>" class="h-full w-full object-cover" />
+                <?php
+            } else {
+                ?>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle-2">
+                    <path d="M18 20a6 6 0 0 0-12 0" />
+                    <circle cx="12" cy="10" r="4" />
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+                <?php
+            }
+            ?>
         </div>
 
         <div class="flex flex-col mb-4">
-            <span>Nom : <b>PhiBi</b></span>
-            <span>Espèce : <b>public static void</b></span>
-            <span>Classe : <b>UserFactory</b></span>
-            <span>Niveau : <b>69</b></span>
+            <span>Nom : <b><?= $adventurer["name_adventurer"] ?></b></span>
+            <span>Espèce : <b><?= $adventurer["race"] ?></b></span>
+            <span>Classe : <b><?= $adventurer["classe"] ?></b></span>
+            <span>Niveau : <b><?= $adventurer["level"] ?></b></span>
         </div>
 
         <div class="mb-4">
             <b>Histoire et origine</b>
-            <p>
-                Franchement je sais pas trop quoi dire ici. Alors j'ai eu une idée que je suis sûr.e que vous allez tous adorer !<br><br>
-                
-                Voici un lorem ipsum :<br><br>
-                
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p class="whitespace-pre-wrap"><?= $adventurer["resume_adventurer"] ?></p>
         </div>
 
-        <div>
+        <div class="hidden">
             <b>Notes</b>
             <p>
                 Je suis stupide !
