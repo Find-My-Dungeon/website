@@ -5,7 +5,7 @@
         </div>
     </a>
 
-    <?php if (isset($_SESSION)) { ?>
+    <?php if (isset($_SESSION) && isset($_SESSION['loggedin'])) { ?>
         <div x-data="{ tab: '' }" class="hidden md:flex flex-row gap-4 md:gap-12 items-center">
             <div @mouseover="tab = 'sheets'" @mouseout="tab = ''" class="relative py-3">
                 <h2 class="menu-dropdown">Mes fiches</h2>
@@ -89,5 +89,11 @@
         </button>
     <?php } else { ?>
         <h2 class="block text-xl font-bold mx-auto">FindMyDungeon</h2>
+
+        <div class="h-10 w-10 bg-white/20 flex items-center justify-center rounded-full">
+            <a href="/login" class="text-xl font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+            </a>
+        </div>
     <?php } ?>
 </header>
