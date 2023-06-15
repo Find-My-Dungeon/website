@@ -7,7 +7,7 @@ function init_bdd() {
     CREATE TABLE IF NOT EXISTS `user` (
       `id_user` int NOT NULL AUTO_INCREMENT,
       `name_user` varchar(45) NOT NULL,
-      `first_name_user` varchar(45) NOT NULL,
+      `first_name_user` varchar(45) DEFAULT NULL,
       `pseudo` varchar(45) NOT NULL,      
       `email` varchar(45) NOT NULL,
       `password` text NOT NULL,
