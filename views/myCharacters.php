@@ -5,9 +5,6 @@ include_once '../includes/header.php';
 require_once __DIR__ . '/../data/adventurers.php';
 
 $adventurers = get_user_adventurers($_SESSION["id"]);
-
-$delete_adventurers = delete_user_adventurers($_SESSION["id"]);
-
 ?>
 <body>
     <?php include_once '../includes/navbar.php'; ?>
