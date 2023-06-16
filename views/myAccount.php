@@ -13,6 +13,8 @@ if(isset($_POST['name_user'])){
     save_user($_SESSION["id"]);
 }
 
+$delete_user = delete_user($_SESSION["id"]);
+
 
 ?>
 <body>
@@ -41,15 +43,15 @@ if(isset($_POST['name_user'])){
                 <div class="flex flex-col gap-4 pt-2">
                     <div class="flex flex-col gap-2">
                         <label for="name_user">Pseudo <span class="text-red-500">*</span></label>
-                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="text" name="name_user" id="name_user" placeholder="ex. PhiBi" required value="<?= $user["pseudo"] ?>" />
+                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="text" name="name_user" id="name_user" placeholder="ex. PhiBi" required value="<?php echo $user["pseudo"] ?>" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="email">Adresse email <span class="text-red-500">*</span></label>
-                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="email" name="email" id="email" placeholder="ex. phibi@mail.com" required value="<?= $user["email"] ?>" />
+                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="email" name="email" id="email" placeholder="ex. phibi@mail.com" required value="<?php echo $user["email"] ?>" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="password">Mot de passe <span class="text-red-500">*</span></label>
-                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="password" name="password" id="password" required value="<?= $user["password"] ?>"/>
+                        <input class="outline-none rounded-lg px-2 py-1 border-2 border-blue-500 transition hover:border-blue-600 focus:border-blue-700 focus:ring-2 focus:ring-blue-700" type="password" name="password" id="password" required value="<?php echo $user["password"] ?>"/>
                     </div>
                 </div>
 
