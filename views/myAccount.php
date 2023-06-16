@@ -7,13 +7,12 @@ include_once '../includes/header.php';
 require_once __DIR__ . '/../data/accounts.php';
 
 $user = get_user($_SESSION["id"]);
-var_dump($user);
 
 if(isset($_POST['name_user'])){
     save_user($_SESSION["id"]);
 }
 
-$delete_user = delete_user($_SESSION["id"]);
+//$delete_user = delete_user($_SESSION["id"]);
 
 
 ?>
