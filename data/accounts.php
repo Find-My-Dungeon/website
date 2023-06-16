@@ -51,10 +51,3 @@ function save_user($id) {
     return $result;
 
 }
-
-function delete_user($id){
-    require_once __DIR__ . '/../utils/mysql.php';
-    $sql="DELETE * FROM user WHERE id_user = :id";
-    $result = execute_sql($sql);
-    return $result;
-}
