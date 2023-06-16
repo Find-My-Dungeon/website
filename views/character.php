@@ -58,7 +58,7 @@ $full_name_user = trim($adventurer["first_name_user"] . " " . $adventurer["name_
                 <span>Voir le profil de <?= $full_name_user ?></span>
             </a>
 
-            <?php if (isset($_SESSION["id"]) && $_SESSION["id"] == $adventurer["id_user_adventurer"]) { ?>
+            <?php if ((isset($_SESSION["id"]) && $_SESSION["id"] == $adventurer["id_user_adventurer"]) || (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"])) { ?>
                 <a href="newCharacter?id=<?= $adventurer["id_adventurer"] ?>" class="flex flex-row gap-3 border-2 border-purple-500 rounded-md px-2 py-2 mt-4 bg-purple-500 hover:bg-purple-600 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-edit"><path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"/><polyline points="14 2 14 8 20 8"/><path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z"/></svg>
                 </a>
