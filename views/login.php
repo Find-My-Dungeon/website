@@ -46,6 +46,21 @@ if(isset($_POST['name_user_register']) && isset($_POST['email_register']) && iss
         $parameters = array(':name_user' => $name_user, ':email' => $email, ':hashed_password' => $hashed_password);
         execute_sql($sql, $parameters);
 
+        $sql = "SELECT * FROM user WHERE email = :email and password = :password";
+        $parameters = array(':email' => $email, ':password' => $hashed_password);
+        $res = execute_sql($sql, $parameters);
+
+        if (count($res) > 0) {
+            $user = $res[0];
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $user['id_user'];
+            $_SESSION["name_user"] = $user['name_user'];
+            $_SESSION["is_admin"] = $user['is_admin'];
+            header("location: /");
+        } else {
+            echo "Wrong password";
+        }
+
     // Login the user
     // Redirect to myAccount in order to fill the rest with the profile information
     // such as name, address, social media, etc.
