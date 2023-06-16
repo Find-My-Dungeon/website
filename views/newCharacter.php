@@ -52,6 +52,7 @@ include_once '../includes/header.php';
             || !isset($_POST['race'])
             || !isset($_POST['avatar'])
             || !isset($_POST['resume_adventurer'])
+            || !isset($_POST['level'])
         ) {
             echo '<span class="mx-auto px-6">Des informations obligatoires sont manquantes.</span>';
         } else {
@@ -59,8 +60,10 @@ include_once '../includes/header.php';
             $classe = htmlentities(trim($_POST['classe']));
             $race = htmlentities(trim($_POST['race']));
             $avatar = htmlentities(trim($_POST['avatar']));
-            $level = htmlentities(trim('level'));
+            $level = htmlentities(trim($_POST['level']));
             $resume_adventurer = htmlentities(trim($_POST['resume_adventurer']));
+
+            echo (int)$level;
         
             require_once __DIR__ . '/../utils/mysql.php';
         
